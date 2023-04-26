@@ -24,13 +24,12 @@ function loadUsuarios() {
 }
 
 function saveUsuarios(data: any) {
-    usuarios.push({
-        id: usuarios.length + 1,
-        ...data
+    id++;
+    usuarios.push({id: usuarios.length + 1,
+        ...data,situacao: "ativo"
     });
 
     fs.writeFileSync(ARQUIVO, JSON.stringify(usuarios));
 
 }
-
 export { loadUsuarios, saveUsuarios};
