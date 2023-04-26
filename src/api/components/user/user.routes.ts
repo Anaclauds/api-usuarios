@@ -16,8 +16,8 @@ export class UserRoutes {
   private init(): void {
     this.router.get('/usuarios', this.controller.list);
     this.router.post('/usuarios', this.controller.create);
-    this.router.put('/usuarios', this.controller.update);
-    this.router.delete('/usuarios', this.controller.destroy);
+    this.router.put('/usuarios/:id', this.controller.update);
+    this.router.delete('/usuarios/:id', this.controller.destroy);
   }
 
   public routes(): Router {

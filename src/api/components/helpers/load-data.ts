@@ -1,5 +1,5 @@
 import fs from 'fs';
-const ARQUIVO = `${__dirname}/../usuario/storage/usuarios.json`;
+const ARQUIVO = `${__dirname}/../storage/usuarios.json`;
 let id =0;
 let usuarios = Array();
 
