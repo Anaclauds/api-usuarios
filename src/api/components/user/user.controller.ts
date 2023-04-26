@@ -32,7 +32,7 @@ public create(req: Request, res: Response) {
           message: "A propriedade [nome de usuario] não deve estar em indefinida/vazio!"
         }
     ];
-
+//verifica se esta vazio
     const checkValidate = isValidateObjectRequest(req, inputs);
 
     if (Array.isArray(checkValidate)) {
@@ -50,9 +50,11 @@ public create(req: Request, res: Response) {
     message: mensagem
   }); 
 }
+//function update
 public update(req: Request, res: Response) {
   res.status(200).json({ message: 'function update' });
 }
+//function destroy
 public destroy(req: Request, res: Response) {
   res.status(200).json({ message: 'function destroy....' });
 }

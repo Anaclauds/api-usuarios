@@ -1,35 +1,23 @@
-// Arquivo: src/helpers/load-data.ts
-
 import fs from 'fs';
-
-const ARQUIVO = `${__dirname}/../storage/usuarios.json`;
-
+const ARQUIVO = `${__dirname}/../usuario/storage/usuarios.json`;
+let id =0;
 let usuarios = Array();
 
-function loadUsuarios() {
 
-    console.log(ARQUIVO)
 
-    // Verifica se o arquivo existe, caso não exista ele cria
+function loadUsuarios(){
     if (!fs.existsSync(ARQUIVO))
         fs.writeFileSync(ARQUIVO, JSON.stringify([]));
-
-    // Lê o arquivo e adiciona o conteúdo na variável `data`
     const data = fs.readFileSync(ARQUIVO);
-
-    // Converte o conteúdo do arquivo para JSON
     usuarios = JSON.parse(data.toString());
-
-    return usuarios;
+    return usuarios; 
 }
 
-function saveUsuarios(data: any) {
+function saveUsuarios(data: any){
     id++;
-    usuarios.push({id: usuarios.length + 1,
-        ...data,situacao: "ativo"
-    });
-
+    usuarios.push({id:usuarios.length+1,
+    ...data,situação:"ativo"});
     fs.writeFileSync(ARQUIVO, JSON.stringify(usuarios));
-
 }
-export { loadUsuarios, saveUsuarios};
+
+export {loadUsuarios, saveUsuarios};
